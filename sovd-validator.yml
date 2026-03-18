@@ -1,0 +1,5 @@
+plugins:
+  - '@dsagmbh/sovd-redocly-rules/plugins/sovd-rules.js'
+
+extends:
+  - sovd-rules/recommended

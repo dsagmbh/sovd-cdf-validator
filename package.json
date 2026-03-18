@@ -1,0 +1,28 @@
+{
+  "name": "@dsagmbh/sovd-redocly-rules",
+  "version": "1.0.0",
+  "description": "Custom Redocly linting rules for SOVD standard compliance.",
+  "license": "MIT",
+  "author": "DSA Daten- und Systemtechnik GmbH",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dsagmbh/sovd-cdf-validator.git"
+  },
+  "main": "plugins/sovd-rules.js",
+  "files": [
+    "plugins/rules",
+    "plugins/sovd-rules.js"
+  ],
+  "peerDependencies": {
+    "@redocly/cli": "^2.21.0"
+  },
+  "sovd": {
+    "supportedVersions": ["1.0.0", "1.1.0"]
+  },
+  "keywords": [
+    "redocly",
+    "openapi",
+    "sovd",
+    "linting"
+  ]
+}
