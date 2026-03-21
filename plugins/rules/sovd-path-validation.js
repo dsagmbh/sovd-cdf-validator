@@ -97,6 +97,13 @@ export default function PathValidation() {
       enter(pathItem, ctx) {
         const path = ctx.key;
 
+        // Paths starting with /x- are vendor extensions per OpenAPI 3.x §4.8.1
+        // ("Specification Extensions"). They are outside the scope of ISO 17978-3
+        // path validation and should not be flagged as non-conformant.
+        if (path.startsWith("/x-")) {
+          return;
+        }
+
         if (!regexps.test(path)) {
           ctx.report({
             message: `Path "${path}" is not defined by the SOVD standard (cf. §5.3, §5.4)`,
