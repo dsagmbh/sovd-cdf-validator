@@ -1,5 +1,6 @@
 {
   "name": "@dsagmbh/sovd-redocly-rules",
+  "type": "module",
   "version": "1.0.0",
   "description": "Custom Redocly linting rules for SOVD standard compliance.",
   "license": "MIT",
