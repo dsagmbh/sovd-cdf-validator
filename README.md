@@ -47,7 +47,7 @@ This configuration loads the plugin as well as the recommended configuration for
 | `query-param-include-schema-defined` | Ensures that the query parameter `include-schema` is defined for certain requests                             | error    |
 | `query-param-array-definition`       | Ensures that query parameters of type array are defined using the right style correctly                       | error    |
 | `sovd-error-object`                  | Ensures that error objects comply to the SOVD standard                                                        | error    |
-| `sovd-path-structure`                | Validate that paths comply to the endpoints defined in the standard                                           | error    |
+| `sovd-path-structure`                | Validate that paths comply to the endpoints defined in the standard (any path segment starting with x- is ignored)                                          | error    |
 | `x-sovd-data-category-defined`       | `x-sovd-data-category` must be defined for data resources and match the defined ones                          | error    |
 | `x-sovd-headers-only-defined`        | validates that `X-SOVD-` is only as part of headers defined by the standard                                   | error    |
 | `x-sovd-name-defined`                | Ensure that the property `x-sovd-name` is defined for a path                                                  | error    |
