@@ -8,7 +8,6 @@
 
 const regexps = new RegExp(
   [
-
     // Functions
     `^/functions/.*$`,
 
@@ -52,7 +51,7 @@ const regexps = new RegExp(
 
     // 7.11 API methods for triggers
     `^/(components|apps)/[^/]+(?:/subcomponents/[^/]+)*/triggers(?:/[^/]+)$`,
-    
+
     // 7.12 API methods for configuration
     `^/(components|apps)/[^/]+(?:/subcomponents/[^/]+)*/configurations(?:/[^/]+)$`,
 
@@ -87,8 +86,7 @@ const regexps = new RegExp(
 
     // 7.22 API methods for communication-logs
     `^/(components|apps)/[^/]+(?:/subcomponents/[^/]+)*/communication-logs(?:/[^/]+)$`,
-
-  ].join("|")
+  ].join("|"),
 );
 
 export default function PathValidation() {
@@ -97,10 +95,15 @@ export default function PathValidation() {
       enter(pathItem, ctx) {
         const path = ctx.key;
 
-        // Paths starting with /x- are vendor extensions per OpenAPI 3.x §4.8.1
+        // Path segments starting with /x- are vendor extensions per OpenAPI 3.x §4.8.1
         // ("Specification Extensions"). They are outside the scope of ISO 17978-3
         // path validation and should not be flagged as non-conformant.
-        if (path.startsWith("/x-")) {
+        const hasXSegment = path
+          .split("/")
+          .filter(Boolean)
+          .some((segment) => segment.startsWith("x-"));
+          
+        if (hasXSegment) {
           return;
         }
 
@@ -110,7 +113,6 @@ export default function PathValidation() {
             location: ["paths", path],
           });
         }
-
       },
     },
   };
