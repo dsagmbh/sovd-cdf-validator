@@ -16,7 +16,7 @@ The option `--node-options='--max-old-space-size=10240'` is required for the lar
 Download the release and install the package using npm (add `-g` for global installation):
 
 ```bash
-npm install dsagmbh-sovd-redocly-rules-1.1.0.tgz
+npm install dsagmbh-sovd-redocly-rules-x.x.x.tgz
 ```
 
 Afterwards, you can use the custom rules in your Redocly configuration file as follows:
